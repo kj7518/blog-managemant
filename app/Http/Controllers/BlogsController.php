@@ -20,11 +20,8 @@ class BlogsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $user = Auth::user();
-        $role = $user ? $user->role->name : "";
-        $blogs = Blog::all();
-        return view('blog.index',compact('blogs','role'));
+    {        
+        return view('blog.index');
     }
 
     public function getJsonData(Request $request)
